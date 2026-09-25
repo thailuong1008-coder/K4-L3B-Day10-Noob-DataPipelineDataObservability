@@ -8,10 +8,10 @@
 
 | Thông tin | Nội dung |
 | :--- | :--- |
-| **Họ và tên** | [Điền Họ và tên Thành viên 1] |
-| **MSSV** | [Điền MSSV] |
+| **Họ và tên** | Nguyễn Thái Lương |
+| **MSSV** |2A202602932 |
 | **Khóa / Lớp** | K4 - Lớp B (Ca Sáng) |
-| **Tên nhóm** | [Điền tên nhóm] |
+| **Tên nhóm** | Noob |
 | **Vai trò chính** | Trưởng nhóm & Pipeline Integrator |
 | **Repository** | `https://github.com/[org]/K4-L3B-DAY10-[TenNhom]-DataPipelineDataObservability` |
 | **Ngày hoàn thành** | 2026-09-26 |

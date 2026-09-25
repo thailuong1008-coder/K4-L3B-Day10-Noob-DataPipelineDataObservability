@@ -1,7 +1,5 @@
 # Báo Cáo Cá Nhân — Thành Viên 1: Trưởng Nhóm & Pipeline Integrator
 
-> Mẫu báo cáo cá nhân dành cho Thành viên 1 theo chuẩn quy định tại `report/individual_report.md`. Hãy cập nhật lại Họ tên và MSSV trước khi nộp.
-
 ---
 
 ## 1. Thông tin cá nhân

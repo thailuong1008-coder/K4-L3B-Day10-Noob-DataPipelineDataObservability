@@ -38,7 +38,7 @@ def _normalize_list(values: list[str] | None) -> list[str]:
     return cleaned
 
 
-def _build_embedding_text(row: pd.Series) -> str:
+def build_embedding_text(row: pd.Series) -> str:
     return "\n".join(
         [
             f"Title: {row['title']}",
@@ -94,7 +94,7 @@ def build_clean_dataframe(records: list[PaperRecord], run_date: datetime) -> pd.
     valid = df["paper_id"].ne("") & df["title"].ne("") & df["summary"].ne("") & published.notna()
     df = df[valid].copy()
     df["age_days"] = df["age_days"].astype(int)
-    df["text_for_embedding"] = df.apply(_build_embedding_text, axis=1)
+    df["text_for_embedding"] = df.apply(build_embedding_text, axis=1)
 
     # Khu trung lap theo paper_id, giu ban cap nhat moi nhat.
     df = df.sort_values(["paper_id", "updated"], ascending=[True, False])

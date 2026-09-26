@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "provider": "gemini",
+  "answers": [
+    {
+      "question": "What is the main contribution of the paper 'Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks'?",
+      "answer": "Based on the paper *\"Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks\"* by Minh Nguyen and Hoang Le, the main contribution is exploring and introducing **agentic multi-hop reasoning and routing across heterogeneous vector indices** to enhance Retrieval-Augmented Generation (RAG) for knowledge-intensive tasks."
+    },
+    {
+      "question": "What is the main contribution of the paper 'Mitigating Ghost Vectors in Dense Retrieval via Idempotent Indexing'?",
+      "answer": "Based on the paper \"Mitigating Ghost Vectors in Dense Retrieval via Idempotent Indexing\", the main contribution is the design of an **idempotent index synchronization protocol** that guarantees the complete purge of outdated vector artifacts (orphaned embeddings / \"ghost vectors\") left behind by soft-deletions in vector databases, thereby mitigating hallucinations in dense retrieval."
+    }
+  ]
+}

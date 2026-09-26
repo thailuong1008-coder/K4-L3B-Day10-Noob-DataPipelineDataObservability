@@ -1,0 +1,92 @@
+[
+  {
+    "id": "test-01",
+    "question_type": "summary",
+    "question": "What is the summary of the paper titled 'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines'?",
+    "ground_truth": "Static benchmarks fail to capture domain drift in enterprise knowledge bases. We establish a synthetic test generator that auto-creates paired evaluation sets whenever new corpora are ingested.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671812"
+    ]
+  },
+  {
+    "id": "test-02",
+    "question_type": "authors",
+    "question": "Who are the authors of the paper titled 'Multi-Agent Consensus for High-Stakes Fact Verification'?",
+    "ground_truth": "Phong Vu, Ngan Hoang",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671808"
+    ]
+  },
+  {
+    "id": "test-03",
+    "question_type": "date",
+    "question": "When was the paper titled 'Freshness SLAs for Real-Time LLM Knowledge Augmentation' published?",
+    "ground_truth": "2026-07-05",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671804"
+    ]
+  },
+  {
+    "id": "test-04",
+    "question_type": "categories",
+    "question": "What are the categories of the paper titled 'Synthetic Corruption Testing: Stress-Testing Vector Search Robustness'?",
+    "ground_truth": "Robustness, Information Retrieval",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671807"
+    ]
+  },
+  {
+    "id": "test-05",
+    "question_type": "summary",
+    "question": "What is the summary of the paper titled 'Data Observability and Quality Gates for Production RAG Systems'?",
+    "ground_truth": "Silent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors. We introduce automated quality gates using Great Expectations 1.x to catch stale and malformed embeddings before serving.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671802"
+    ]
+  },
+  {
+    "id": "test-06",
+    "question_type": "authors",
+    "question": "Who are the authors of the paper titled 'Advanced Perspectives on Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines'?",
+    "ground_truth": "Quang Le, Yen Vu",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671824"
+    ]
+  },
+  {
+    "id": "test-07",
+    "question_type": "date",
+    "question": "When was the paper titled 'Advanced Perspectives on Hybrid Search Architectures: Combining BM25 with Dense Representations' published?",
+    "ground_truth": "2026-06-11",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671823"
+    ]
+  },
+  {
+    "id": "test-08",
+    "question_type": "categories",
+    "question": "What are the categories of the paper titled 'Advanced Perspectives on Automated Data Quality Profiling with Great Expectations in CI/CD'?",
+    "ground_truth": "Data Quality, DevOps",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671822"
+    ]
+  },
+  {
+    "id": "test-09",
+    "question_type": "summary",
+    "question": "What is the summary of the paper titled 'Advanced Perspectives on Chunking Strategies for Technical Documentation Retrieval'?",
+    "ground_truth": "An extended empirical study on ierarchical and semantic boundary chunking preserves code block contexts and markdown headings. Our benchmark demonstrates superior top-1 recall compared to fixed character length sliding windows Further analysis on scaling parameters.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671821"
+    ]
+  },
+  {
+    "id": "test-10",
+    "question_type": "authors",
+    "question": "Who are the authors of the paper titled 'Automated Data Quality Profiling with Great Expectations in CI/CD'?",
+    "ground_truth": "Son Nguyen, Thuy Doan",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671810"
+    ]
+  }
+]

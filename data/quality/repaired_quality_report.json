@@ -1,0 +1,29 @@
+{
+  "report_name": "repaired_quality_report",
+  "total_rows": 24,
+  "passed": false,
+  "checks": {
+    "row_count": {
+      "value": 24,
+      "passed": true
+    },
+    "paper_id_not_null": {
+      "passed": true
+    },
+    "paper_id_unique": {
+      "passed": true
+    },
+    "title_not_null": {
+      "passed": true
+    },
+    "summary_valid": {
+      "passed": true,
+      "min_length": 193
+    },
+    "freshness": {
+      "stale_rows": 1,
+      "threshold_days": 180,
+      "passed": false
+    }
+  }
+}

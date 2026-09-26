@@ -1,0 +1,29 @@
+{
+  "report_name": "corrupted_quality_report",
+  "total_rows": 21,
+  "passed": false,
+  "checks": {
+    "row_count": {
+      "value": 21,
+      "passed": true
+    },
+    "paper_id_not_null": {
+      "passed": true
+    },
+    "paper_id_unique": {
+      "passed": false
+    },
+    "title_not_null": {
+      "passed": true
+    },
+    "summary_valid": {
+      "passed": false,
+      "min_length": 0
+    },
+    "freshness": {
+      "stale_rows": 1,
+      "threshold_days": 180,
+      "passed": false
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "original_rows": 24,
+  "operations": [
+    {
+      "type": "drop_latest_20_percent",
+      "dropped_rows": 4
+    },
+    {
+      "type": "blank_summary",
+      "rows": 1,
+      "paper_id": "10.1145/3637528.3671802"
+    },
+    {
+      "type": "noise",
+      "rows": 1,
+      "paper_id": "10.1145/3637528.3671824"
+    },
+    {
+      "type": "truncate_title",
+      "rows": 1,
+      "paper_id": "10.1145/3637528.3671823"
+    },
+    {
+      "type": "stale_date",
+      "rows": 1,
+      "paper_id": "10.1145/3637528.3671822"
+    },
+    {
+      "type": "duplicate_rows",
+      "rows": 1,
+      "paper_id": "10.1145/3637528.3671802"
+    }
+  ],
+  "final_rows": 21
+}

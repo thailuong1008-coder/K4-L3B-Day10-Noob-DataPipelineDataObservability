@@ -11,7 +11,7 @@
 | **Khóa / Lớp** | K4 - Lớp B (Ca Sáng) |
 | **Tên nhóm** | Noob |
 | **Vai trò chính** | Trưởng nhóm & Pipeline Integrator |
-| **Repository** | `https://github.com/[org]/K4-L3B-DAY10-[TenNhom]-DataPipelineDataObservability` |
+| **Repository** | `https://github.com/thailuong1008-coder/K4-L3B-Day10-Noob-DataPipelineDataObservability` |
 | **Ngày hoàn thành** | 2026-09-26 |
 
 ---

@@ -1,6 +1,6 @@
 # Phase 1 Report — Baseline RAG Pipeline
 
-_Generated at 2026-09-26T04:40:44.665428+00:00_
+_Generated at 2026-09-26T00:55:02.379264+00:00_
 
 ## 1. Source & Lineage
 
@@ -15,8 +15,8 @@ _Generated at 2026-09-26T04:40:44.665428+00:00_
 | clean_row_count | 24 |
 | chroma_collection | papers-baseline |
 | embedding_model | sentence-transformers/all-MiniLM-L6-v2 |
-| llm_provider | gemini |
-| agent_demo | ok |
+| llm_provider | mock |
+| agent_demo | skipped |
 
 ## 2. Evaluation Metrics (baseline)
 

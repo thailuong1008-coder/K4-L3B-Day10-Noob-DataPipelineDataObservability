@@ -1,6 +1,6 @@
 # Corruption Report — Baseline vs Corrupted vs Repaired
 
-_Generated at 2026-09-26T04:42:19.983047+00:00_
+_Generated at 2026-09-26T00:55:48.854581+00:00_
 
 All three states are evaluated on the same test set (`data/eval/test_set.json`).
 
@@ -11,7 +11,7 @@ All three states are evaluated on the same test set (`data/eval/test_set.json`).
 | retrieval_hit_rate | 1.0000 | 0.8000 | 1.0000 | -0.2000 | +0.0000 |
 | mean_token_f1 | 1.0000 | 0.8588 | 1.0000 | -0.1412 | +0.0000 |
 | judge_accuracy | 1.0000 | 0.9000 | 1.0000 | -0.1000 | +0.0000 |
-| mean_judge_score | 5.0000 | 4.5000 | 5.0000 | -0.5000 | +0.0000 |
+| mean_judge_score | 5.0000 | 4.4000 | 5.0000 | -0.6000 | +0.0000 |
 
 ### Token F1 by question type
 

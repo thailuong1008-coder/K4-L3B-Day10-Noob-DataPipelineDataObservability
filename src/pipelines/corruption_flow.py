@@ -62,7 +62,19 @@ def print_comparison_table(
     print("=" * 80)
 
 
-def run_corruption_flow(settings: Settings | None = None) -> dict:
+def repair_from_raw_snapshot(settings: Settings, run_date: datetime | None = None) -> pd.DataFrame:
+    """Rebuild clean artifacts from the immutable raw snapshot.
+
+    Re-running this function with the same run date produces the same dataset.
+    """
+    raw_records = load_raw_records(settings.paths.raw_records_json)
+    repaired_df = build_clean_dataframe(raw_records, run_date or now_utc())
+    write_csv(repaired_df, settings.paths.repaired_clean_csv)
+    repaired_df.to_json(settings.paths.repaired_clean_json, orient="records", indent=2, force_ascii=False)
+    return repaired_df
+
+
+def run_corruption_flow_pipeline(settings: Settings | None = None) -> dict:
     """Full corruption, evaluation, idempotent repair, and comparison flow.
     
     Orchestrated by Member 1 (Pipeline Integrator).
@@ -114,16 +126,15 @@ def run_corruption_flow(settings: Settings | None = None) -> dict:
     # 5. Run Quality Gate & Freshness on Corrupted Data
     log_flow_step(5, total_steps, "Kích hoạt Data Quality Gate trên dữ liệu lỗi (Phát hiện vi phạm)")
     corrupted_quality = run_data_quality_checks(corrupted_df, settings, report_name="corrupted")
-    corrupted_freshness = build_freshness_report(corrupted_df, settings, settings.paths.corrupted_quality_report)
+    corrupted_freshness = build_freshness_report(
+        corrupted_df, settings, settings.paths.quality_dir / "corrupted_freshness_report.json"
+    )
     print(f"  🚨 GX 1.x Quality Check: {corrupted_quality.get('success', False)} (Kỳ vọng: False)")
     print(f"  🚨 Freshness Check: {corrupted_freshness.get('is_fresh', False)}")
 
     # 6. Idempotent Repair from raw snapshot
     log_flow_step(6, total_steps, "Kích hoạt cơ chế tự phục hồi an toàn (Idempotent Repair)")
-    raw_records = load_raw_records(settings.paths.raw_records_json)
-    repaired_df = build_clean_dataframe(raw_records, now_utc())
-    write_csv(repaired_df, settings.paths.repaired_clean_csv)
-    repaired_df.to_json(settings.paths.repaired_clean_json, orient="records", indent=2, force_ascii=False)
+    repaired_df = repair_from_raw_snapshot(settings)
     print(f"  ✓ Phục hồi thành công {len(repaired_df)} bản ghi từ snapshot gốc.")
 
     # 7. Re-index repaired dataset & evaluate recovery
@@ -157,6 +168,7 @@ def run_corruption_flow(settings: Settings | None = None) -> dict:
         repaired_quality=repaired_quality,
         corrupted_freshness=corrupted_freshness,
         repaired_freshness=repaired_freshness,
+        baseline_quality=baseline_quality,
     )
     print(f"  ✓ Báo cáo đối chiếu đã được ghi vào: {settings.paths.comparison_report}")
 
@@ -174,12 +186,26 @@ def run_corruption_flow(settings: Settings | None = None) -> dict:
         "baseline": baseline_metrics,
         "corrupted": corrupted_bundle.summary,
         "repaired": repaired_bundle.summary,
+        "quality": {
+            "baseline": baseline_quality,
+            "corrupted": corrupted_quality,
+            "repaired": repaired_quality,
+        },
+        "freshness": {
+            "corrupted": corrupted_freshness,
+            "repaired": repaired_freshness,
+        },
     }
+
+
+def run_corruption_flow(settings: Settings | None = None) -> dict:
+    """Backward-compatible alias for the Phase 2 pipeline."""
+    return run_corruption_flow_pipeline(settings)
 
 
 def main() -> None:
     try:
-        run_corruption_flow()
+        run_corruption_flow_pipeline()
     except NotImplementedError as err:
         print("\n" + "!" * 60)
         print(f"[THÔNG BÁO TÍCH HỢP] Một thành phần đang được xây dựng: {err}")
